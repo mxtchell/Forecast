@@ -321,7 +321,7 @@ def fetch_data(metric, start_date, other_filters):
     SELECT
         month_new,
         SUM({metric}) as {metric}
-    FROM read_csv('pasta_2025.csv')
+    FROM read_csv('pasta_demo.csv')
     WHERE 1=1
     """
 
