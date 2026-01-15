@@ -29,7 +29,7 @@ DATABASE_ID = "83c2268f-af77-4d00-8a6b-7181dc06643e"
     description="Generate intelligent forecasts using best-fit model selection with automatic model optimization",
     capabilities="Provides multi-model forecasting with automatic selection of best-performing algorithm. Supports linear regression, moving average, and other forecasting models. Generates confidence intervals, trend analysis, and seasonality detection. Creates professional visualizations with KPIs, charts, and insights.",
     limitations="Requires minimum 12 historical data points. Limited to 36 months forecast horizon. Assumes monthly granularity (month_new). Performance depends on data quality and historical patterns.",
-    example_questions="What will sales be over the next 6 months? Can you forecast volume for Q1 2024? Show me a 12-month revenue projection with confidence intervals. What's the expected growth trend for the next quarter?",
+    example_questions="What will sales be over the next 6 months? Can you forecast volume for Q1 2026? Show me a 12-month revenue projection with confidence intervals. What's the expected growth trend for the next quarter?",
     parameter_guidance="Select metric to forecast (sales, volume, etc.). Choose forecast steps (1-36 months, default 6). Optionally filter by date range or apply dimensional filters. The skill automatically selects the best forecasting model based on historical performance.",
     parameters=[
         SkillParameter(
@@ -321,7 +321,7 @@ def fetch_data(metric, start_date, other_filters):
     SELECT
         month_new,
         SUM({metric}) as {metric}
-    FROM read_csv('pasta_demo.csv')
+    FROM read_csv('pasta_demo2.csv')
     WHERE 1=1
     """
 
